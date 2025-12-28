@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+  <h1>{% if update %}Update{% else %}Add{% endif %} Record</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-secondary">
+      {% if update %}Update Record{% else %}Add Record{% endif %}
+    </button>
+  </form>
+</div>
+
+{% endblock %}
